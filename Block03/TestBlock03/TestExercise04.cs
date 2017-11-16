@@ -16,8 +16,8 @@ namespace TestBlock03
 
             string[] result = Class1.GetStringSubsets(arrayStr, k);
 
-            StringAssert.Equals("fun rock", result[0]);
-            StringAssert.Equals("fun test", result[1]);
+            Assert.AreEqual("fun rock", result[0]);
+            Assert.AreEqual("fun test", result[1]);
             
         }
     }

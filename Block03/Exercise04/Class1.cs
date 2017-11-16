@@ -8,7 +8,7 @@ namespace Exercise04
         {
             int x = BinomCoefficient(arrayStr.Length, k);
             string[] subSets = new string[x];
-            int y = arrayStr.Length - 1;
+            int y = arrayStr.Length;
             k = k - 1;
 
             for (int i = x - 1; i >= 0; i--)
@@ -19,6 +19,7 @@ namespace Exercise04
                     y--;
                 }
             }
+
             return subSets;
 
         }
@@ -38,15 +39,29 @@ namespace Exercise04
 
         private static int BinomCoefficient(int n, int k)
         {
-            if (k > n) { return 0; }
-            if (n == k) { return 1; } // only one way to chose when n == k
-            if (k > n - k) { k = n - k; } // Everything is symmetric around n-k, so it is quicker to iterate over a smaller k than a larger one.
+            if (k > n)
+            {
+                return 0;
+            }
+
+            if (n == k)
+            {
+                return 1;
+            }
+
+            if (k > n - k)
+            {
+                k = n - k;
+            }
+
             int c = 1;
+
             for (int i = 1; i <= k; i++)
             {
                 c *= n--;
                 c /= i;
             }
+
             return c;
         }
 
