@@ -13,7 +13,7 @@ namespace Exercise01
             {
                 startDate = startDate.AddDays(1);
 
-                if (!IsHoliday(startDate))
+                if (!IsFestivity(startDate))
                 {
                     count++;
                 }
@@ -22,32 +22,32 @@ namespace Exercise01
             return count;
         }
 
-        private static bool IsHoliday(DateTime date)
+        private static bool IsFestivity(DateTime date)
         {
-            int[,] holidays = new int[11, 2];
+            int[,] festivity = new int[11, 2];
 
-            holidays[0, 0] = 1;  //Capodanno
-            holidays[0, 1] = 1;
-            holidays[1, 0] = 6;  //Epifania
-            holidays[1, 1] = 1;
-            holidays[2, 0] = 25; //Liberazione
-            holidays[2, 1] = 4;
-            holidays[3, 0] = 1;  //Lavoro
-            holidays[3, 1] = 5;
-            holidays[4, 0] = 2;  //Repubblica
-            holidays[4, 1] = 6;
-            holidays[5, 0] = 15; //Ferragosto
-            holidays[5, 1] = 8;
-            holidays[6, 0] = 1;  //Tutti i Santi
-            holidays[6, 1] = 11;
-            holidays[7, 0] = 8;  //Immacolata
-            holidays[7, 1] = 12;
-            holidays[8, 0] = 25; //Natale
-            holidays[8, 1] = 12;
-            holidays[9, 0] = 26; //Santo Stefano
-            holidays[9, 1] = 12;
-            holidays[10, 0] = HolyMondayGenerator(date.Year).Day;
-            holidays[10, 1] = HolyMondayGenerator(date.Year).Month;
+            festivity[0, 0] = 1;  //Capodanno
+            festivity[0, 1] = 1;
+            festivity[1, 0] = 6;  //Epifania
+            festivity[1, 1] = 1;
+            festivity[2, 0] = 25; //Liberazione
+            festivity[2, 1] = 4;
+            festivity[3, 0] = 1;  //Lavoro
+            festivity[3, 1] = 5;
+            festivity[4, 0] = 2;  //Repubblica
+            festivity[4, 1] = 6;
+            festivity[5, 0] = 15; //Ferragosto
+            festivity[5, 1] = 8;
+            festivity[6, 0] = 1;  //Tutti i Santi
+            festivity[6, 1] = 11;
+            festivity[7, 0] = 8;  //Immacolata
+            festivity[7, 1] = 12;
+            festivity[8, 0] = 25; //Natale
+            festivity[8, 1] = 12;
+            festivity[9, 0] = 26; //Santo Stefano
+            festivity[9, 1] = 12;
+            festivity[10, 0] = HolyMondayGenerator(date.Year).Day;
+            festivity[10, 1] = HolyMondayGenerator(date.Year).Month;
 
             if (date.DayOfWeek == DayOfWeek.Sunday || date.DayOfWeek == DayOfWeek.Saturday)
             {
@@ -56,7 +56,7 @@ namespace Exercise01
 
             for (int row = 0; row < 11; row++)
             {
-                if (date.Day == holidays[row, 0] && date.Month == holidays[row, 1])
+                if (date.Day == festivity[row, 0] && date.Month == festivity[row, 1])
                 {
                     return true;
                 }

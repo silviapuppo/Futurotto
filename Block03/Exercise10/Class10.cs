@@ -7,12 +7,18 @@ namespace Exercise10
     {
         public static string[] FindEmails(string str)
         {
-            string[] mails = new string[2];
-            string pattern = "";
-            Match m = Regex.Match(str,pattern);
+            string pattern = @"([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,3})";
+            int length = 0;
             int i = 0;
 
-            while (m.Success)
+            foreach (Match m in Regex.Matches(str, pattern))
+            {
+                length++;
+            }
+
+            string[] mails = new string[length];
+
+            foreach (Match m in Regex.Matches(str, pattern))
             {
                 mails[i] = m.Value;
                 i++;

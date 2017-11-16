@@ -15,11 +15,12 @@ namespace TestBlock03
 
             Assert.AreEqual(10, catFamily.Length);
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 1; i <= 10; i++)
             {
-                StringAssert.Equals("Ponci", catFamily[i].Name);
-                StringAssert.Equals("Red", catFamily[i].Color);
+                Assert.AreEqual("Cat" + i, catFamily[i -1].Name);
+                Assert.AreEqual("Red", catFamily[i -1].Color);
             }
         }
+
     }
 }

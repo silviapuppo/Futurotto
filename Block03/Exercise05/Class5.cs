@@ -20,11 +20,9 @@ namespace Exercise05
             Cat cat8 = new Cat();
             Cat cat9 = new Cat();
 
-            int i;
-            
-            while (( i = Sequence.NextValue()) != 11)
+            for(int i = 0; i < catFamily.Length; i++)
             {
-                catFamily[i - 1] = new Cat("Ponci", "Red");
+                catFamily[i] = new Cat("Cat" + Sequence.NextValue(), "Red" );
             }
 
             return catFamily;
