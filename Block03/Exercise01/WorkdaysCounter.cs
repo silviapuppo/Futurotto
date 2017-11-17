@@ -2,7 +2,7 @@
 
 namespace Exercise01
 {
-    public class Class1
+    public class WorkdaysCounter
     {
 
         public static int CountWorkDaysTill(DateTime startDate, DateTime endDate)

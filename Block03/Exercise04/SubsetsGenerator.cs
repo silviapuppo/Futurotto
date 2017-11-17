@@ -2,7 +2,7 @@
 
 namespace Exercise04
 {
-    public class Class1
+    public class SubsetsGenerator
     {
         public static string[] GetStringSubsets(string[] arrayStr, int k)
         {
@@ -29,6 +29,10 @@ namespace Exercise04
             if (k == 0)
             {
                 return arrayStr[y];
+            }
+            else if ()
+            {
+
             }
             else
             {

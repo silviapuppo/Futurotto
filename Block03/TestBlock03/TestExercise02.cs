@@ -14,7 +14,7 @@ namespace TestBlock03
             int[] array2 = { 9, 8, 7, 6, 5, 4, 3, 2, 1 };
             int[] sum = { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
 
-            CollectionAssert.AreEqual(sum, Class2.SumLongInt(array1, array2));
+            CollectionAssert.AreEqual(sum, LongIntAdder.SumLongInt(array1, array2));
         }
 
         [TestMethod]
@@ -32,7 +32,7 @@ namespace TestBlock03
             }
             result[20000] = 0;
 
-            CollectionAssert.AreEqual(result, Class2.SumLongInt(array1, array2));
+            CollectionAssert.AreEqual(result, LongIntAdder.SumLongInt(array1, array2));
         }
 
         [TestMethod]
@@ -42,7 +42,7 @@ namespace TestBlock03
             int[] array2 = { 3, 5, 9 };
             int[] sum = { 6, 7, 0, 3, 0 };
 
-            CollectionAssert.AreEqual(sum, Class2.SumLongInt(array1, array2));
+            CollectionAssert.AreEqual(sum, LongIntAdder.SumLongInt(array1, array2));
         }
     }
 }

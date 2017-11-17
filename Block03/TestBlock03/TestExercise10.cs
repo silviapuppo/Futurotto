@@ -14,8 +14,8 @@ namespace TestBlock03
                 "This is not email: test@test. This also: @gmail.com. Neither this:" + "a @a.b.";
             string[] mails = { "example@gmail.com", "test.user@yahoo.co.uk" };
 
-            CollectionAssert.AreEqual(mails, Class10.FindEmails(str));
-            Assert.AreEqual(2, Class10.FindEmails(str).Length);
+            CollectionAssert.AreEqual(mails, EmailsFinder.FindEmails(str));
+            Assert.AreEqual(2, EmailsFinder.FindEmails(str).Length);
         }
 
         [TestMethod]
@@ -26,8 +26,8 @@ namespace TestBlock03
 
             string[] mails = { "silvia.puppo.97@outlook.it", "silvia.puppo.97@gmail.com", "gabriele.filaferro@gmail.com", "gabrigengio@gmail.com" };
 
-            CollectionAssert.AreEqual(mails, Class10.FindEmails(str));
-            Assert.AreEqual(4, Class10.FindEmails(str).Length);
+            CollectionAssert.AreEqual(mails, EmailsFinder.FindEmails(str));
+            Assert.AreEqual(4, EmailsFinder.FindEmails(str).Length);
         }
 
         [TestMethod]
@@ -38,8 +38,8 @@ namespace TestBlock03
 
             string[] mails = { "silvia..pu97@outlook.it", "sipuppo.97@gmail.com", "gabri.fila@gmail.com", "gabrigengio@gmail.co.uk" };
 
-            CollectionAssert.AreEqual(mails, Class10.FindEmails(str));
-            Assert.AreNotEqual(2, Class10.FindEmails(str).Length);
+            CollectionAssert.AreEqual(mails, EmailsFinder.FindEmails(str));
+            Assert.AreNotEqual(2, EmailsFinder.FindEmails(str).Length);
         }
 
 

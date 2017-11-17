@@ -13,7 +13,7 @@ namespace TestBlock03
             string str = "We are living in a <upcase>yellow submarine</upcase>";
             string result = "We are living in a YELLOW SUBMARINE";
 
-            Class9.TurnUpperCase(str);
+            StringUpper.TurnUpperCase(str);
 
             StringAssert.Equals(result, str);
         }
@@ -24,7 +24,7 @@ namespace TestBlock03
             string str = "We are living in a <upcase>yellow submarine</upcase>. We don't have <upcase>anything</upcase> else";
             string result = "We are living in a YELLOW SUBMARINE. We don't have ANYTHING else";
 
-            Class9.TurnUpperCase(str);
+            StringUpper.TurnUpperCase(str);
 
             StringAssert.Equals(result, str);
         }

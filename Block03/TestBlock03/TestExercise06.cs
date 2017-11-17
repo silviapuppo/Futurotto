@@ -10,16 +10,16 @@ namespace TestBlock03
         [TestMethod]
         public void TestFileParseSuccess()
         {
-            string path = @"C:\Users\gabri\Documents\ProvaSuccess.txt";
-            Class6.ReadFile(path);
+            string path = @"..\..\..\Exercise06\TextParseSuccess.txt";
+            FileParser.ReadFile(path);
         }
 
         [TestMethod]
         [ExpectedException(typeof(FileParseException))]
         public void TestFileParseFail()
         {
-            string path = @"C:\Users\gabri\Documents\ProvaFail.txt";
-            Class6.ReadFile(path);
+            string path = @"..\..\..\Exercise06\TextParseFail.txt";
+            FileParser.ReadFile(path);
         }
 
     }

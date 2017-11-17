@@ -2,7 +2,7 @@
 
 namespace Exercise09
 {
-    public class Class9
+    public class StringUpper
     {
         public static void TurnUpperCase(string str)
         {

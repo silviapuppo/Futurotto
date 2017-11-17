@@ -5,9 +5,9 @@ namespace Exercise06
 {
     public class FileParseException : Exception
     {
-        public string fileName;
-        public int row;
-        public string errorMessage;
+        private string fileName;
+        private int row;
+        private string message;
 
         public string FileName
         {
@@ -35,50 +35,56 @@ namespace Exercise06
 
         public FileParseException(string message)
         {
-            this.errorMessage = message;
+            this.message = message;
         }
 
         public FileParseException(string fileName, int row, Exception inner)
         {
             this.fileName = fileName;
             this.row = row;
-            this.errorMessage = string.Format("Attention! Parse Filed in file {0} at row {1}", this.fileName, this.row);
+            this.message = string.Format("Attention! Parse failed in file {0} at row {1}", this.fileName, this.row);
         }
 
         public FileParseException(string message, string fileName, int row, Exception inner)
         {
             this.fileName = fileName;
             this.row = row;
-            this.errorMessage = message;
+            this.message = message;
         }
 
     }
 
-    public class Class6
+    public class FileParser
     {
         public static void ReadFile(string path)
         {
-            StreamReader file = new StreamReader(path);
-
-            string line;
-            int row = 0;
-            int value;
-
-            while ((line = file.ReadLine()) != null)
+            try
             {
+                StreamReader file = new StreamReader(path);
 
-                row++;
+                string line;
+                int row = 0;
+                int value;
 
-                try
+                while ((line = file.ReadLine()) != null)
                 {
-                    value = int.Parse(line);
+
+                    row++;
+
+                    try
+                    {
+                        value = int.Parse(line);
+                    }
+                    catch (Exception e)
+                    {
+                        throw new FileParseException(path, row, e);
+                    }
                 }
-                catch (Exception e)
-                {
-                    throw new FileParseException(path, row, e);
-                }
+            }
+            catch (FileNotFoundException)
+            {
+                throw new FileNotFoundException(string.Format("Attention! File {0} not found", path ));
             }
         }
     }
 }
-

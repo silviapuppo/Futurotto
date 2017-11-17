@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Exercise08
 {
-    public class Class8
+    public class StringOccurFinder
     {
         public static int FindSubstringOccurrence(string str, string sub)
         {

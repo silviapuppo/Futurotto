@@ -11,7 +11,7 @@ namespace TestBlock03
         public void TestReplaceEqualLetters()
         {
             string str = "IIIIIbbbbOOOOObbbbb";
-            Class3.ReplaceEqualLetters(str);
+            EqualLetterReplacer.ReplaceEqualLetters(str);
 
             StringAssert.Equals("IbOb", str);
         }
@@ -20,7 +20,7 @@ namespace TestBlock03
         public void TestReplaceEqualLettersLastDifferent()
         {
             string str = "IIIIIbbbbOOOOObbbbbC";
-            Class3.ReplaceEqualLetters(str);
+            EqualLetterReplacer.ReplaceEqualLetters(str);
 
             StringAssert.Equals("IbObC", str);
         }
@@ -29,7 +29,7 @@ namespace TestBlock03
         public void TestReplaceEqualLettersDifferentCase()
         {
             string str = "IIIIIiiiIIIibbBBBbbOOOOOoobbbbbC";
-            Class3.ReplaceEqualLetters(str);
+            EqualLetterReplacer.ReplaceEqualLetters(str);
 
             StringAssert.Equals("IiIibBbOobC", str);
         }

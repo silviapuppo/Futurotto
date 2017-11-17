@@ -11,7 +11,7 @@ namespace TestBlock03
         [TestMethod]
         public void TestCreateTenCats()
         {
-            Cat[] catFamily = Class5.CreateTenCats();
+            Cat[] catFamily = CatsCreator.CreateTenCats();
 
             Assert.AreEqual(10, catFamily.Length);
 

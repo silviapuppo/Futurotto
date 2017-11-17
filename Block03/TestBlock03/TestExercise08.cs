@@ -13,7 +13,7 @@ namespace TestBlock03
             string str = "I felt happy because I saw the others were happy " +
                 "and because I knew I should feel happy, but I wasn’t really happy.";
 
-            Assert.AreEqual(4, Class8.FindSubstringOccurrence(str, "happy"));
+            Assert.AreEqual(4, StringOccurFinder.FindSubstringOccurrence(str, "happy"));
         }
 
         [TestMethod]
@@ -21,8 +21,8 @@ namespace TestBlock03
         {
             string str = "I was inside an insidious side of a mountain with sid";
 
-            Assert.AreEqual(3, Class8.FindSubstringOccurrence(str, "in"));
-            Assert.AreEqual(4, Class8.FindSubstringOccurrence(str, "sid"));
+            Assert.AreEqual(3, StringOccurFinder.FindSubstringOccurrence(str, "in"));
+            Assert.AreEqual(4, StringOccurFinder.FindSubstringOccurrence(str, "sid"));
         }
 
         [TestMethod]
@@ -30,8 +30,8 @@ namespace TestBlock03
         {
             string str = "I was inSide an Insidious side of a mountaIn with SID";
 
-            Assert.AreEqual(3, Class8.FindSubstringOccurrence(str, "in"));
-            Assert.AreEqual(4, Class8.FindSubstringOccurrence(str, "SID"));
+            Assert.AreEqual(3, StringOccurFinder.FindSubstringOccurrence(str, "in"));
+            Assert.AreEqual(4, StringOccurFinder.FindSubstringOccurrence(str, "SID"));
         }
     }
 }

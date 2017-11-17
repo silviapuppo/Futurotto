@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Exercise10
 {
-    public class Class10
+    public class EmailsFinder
     {
         public static string[] FindEmails(string str)
         {

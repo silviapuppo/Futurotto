@@ -3,7 +3,7 @@ using CreatingAndUsingObjects;
 
 namespace Exercise05
 {
-    public class Class5
+    public class CatsCreator
     {
         public static Cat[] CreateTenCats()
         {

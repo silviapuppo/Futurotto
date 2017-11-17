@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Exercise03
 {
-    public class Class3
+    public class EqualLetterReplacer
     {
         public static void ReplaceEqualLetters(string str)
         {

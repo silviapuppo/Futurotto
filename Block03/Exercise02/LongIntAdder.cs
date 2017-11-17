@@ -3,7 +3,7 @@
 
 namespace Exercise02
 {
-    public class Class2
+    public class LongIntAdder
     {
         public static int[] SumLongInt(int[] firstNumber, int[] secondNumber)
         {
