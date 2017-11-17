@@ -30,10 +30,6 @@ namespace Exercise04
             {
                 return arrayStr[y];
             }
-            else if ()
-            {
-
-            }
             else
             {
                 return arrayStr[y] + Rec(arrayStr, k - 1, y - 1);
