@@ -5,71 +5,11 @@ namespace Exercise07
 {
     public class Book
     {
-        private string title;
-        private string author;
-        private string publisher;
-        private DateTime releaseDate;
-        private long isbn;
-
-        public string Title
-        {
-            get
-            {
-                return title;
-            }
-            set
-            {
-                title = value;
-            }
-        }
-
-        public string Author
-        {
-            get
-            {
-                return author;
-            }
-            set
-            {
-                author = value;
-            }
-        }
-
-        public string Publisher
-        {
-            get
-            {
-                return publisher;
-            }
-            set
-            {
-                publisher = value;
-            }
-        }
-
-        public DateTime ReleaseDate
-        {
-            get
-            {
-                return releaseDate;
-            }
-            set
-            {
-                releaseDate = value;
-            }
-        }
-
-        public long Isbn
-        {
-            get
-            {
-                return isbn;
-            }
-            set
-            {
-                isbn = value;
-            }
-        }
+        public string Title { get; set; }
+        public string Author { get; set; }
+        public string Publisher { get; set; }
+        public DateTime ReleaseDate { get; set; }
+        public long Isbn { get; set; }
 
         public Book(string title, string author, string publisher, DateTime releaseDate, long isbn)
         {
@@ -89,11 +29,11 @@ namespace Exercise07
         {
             string[] informations = new string[5];
 
-            informations[0] = title;
-            informations[1] = author;
-            informations[2] = publisher;
-            informations[3] = releaseDate.ToString();
-            informations[4] = isbn.ToString();
+            informations[0] = Title;
+            informations[1] = Author;
+            informations[2] = Publisher;
+            informations[3] = ReleaseDate.ToString();
+            informations[4] = Isbn.ToString();
 
             return informations;
 
@@ -120,32 +60,8 @@ namespace Exercise07
 
     public class Library
     {
-        private string name;
-        private List<Book> bookList = new List<Book>();
-
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                name = value;
-            }
-        }
-
-        public List<Book> BookList
-        {
-            get
-            {
-                return bookList;
-            }
-            set
-            {
-                bookList = value;
-            }
-        }
+        public string Name { get; set; }
+        public List<Book> BookList { get; set; }  = new List<Book>();
 
 
 
@@ -161,14 +77,14 @@ namespace Exercise07
 
         public void AddBook(Book book)
         {
-            bookList.Add(book);
+            BookList.Add(book);
         }
 
         public Book SearchBook(string author)
         {
             try
             {
-                return bookList.Find(x => (x.Author == author));
+                return BookList.Find(x => (x.Author == author));
             }
             catch (ArgumentNullException)
             {
@@ -178,14 +94,14 @@ namespace Exercise07
 
         public string[] DisplayBook(Book book)
         {
-            return bookList.Find(x => x.Equals(book)).DisplayBook();
+            return BookList.Find(x => x.Equals(book)).DisplayBook();
         }
 
         public void DeleleBook(Book book)
         {
-            bookList.Remove(book);
+            BookList.Remove(book);
         }
 
-        
+
     }
 }

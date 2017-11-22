@@ -4,19 +4,7 @@ namespace Exercise06
 {
     public class MyPolynomial
     {
-        private double[] coeffs;
-
-        public double[] Coeffs
-        {
-            get
-            {
-                return coeffs;
-            }
-            set
-            {
-                coeffs = value;
-            }
-        }
+        public double[] Coeffs { get; set; }
 
         public MyPolynomial(params double[] coeffs)
         {
@@ -42,7 +30,7 @@ namespace Exercise06
                     }
                     else
                     {
-                        poly += coeffs[i].ToString("+0.####;-0.####") + ' ';
+                        poly += Coeffs[i].ToString("+0.####;-0.####") + ' ';
                     }
                 }
                 else if (i == 1)
@@ -53,7 +41,7 @@ namespace Exercise06
                     }
                     else
                     {
-                        poly += coeffs[i].ToString("+0.####;-0.####") + "x ";
+                        poly += Coeffs[i].ToString("+0.####;-0.####") + "x ";
                     }
                 }
                 else
@@ -64,7 +52,7 @@ namespace Exercise06
                     }
                     else
                     {
-                        poly += coeffs[i].ToString("+0.####;-0.####") + "x^" + i + ' ';
+                        poly += Coeffs[i].ToString("+0.####;-0.####") + "x^" + i + ' ';
                     }
                 }
             }

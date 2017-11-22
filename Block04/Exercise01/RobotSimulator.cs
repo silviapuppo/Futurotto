@@ -9,32 +9,8 @@ namespace Exercise01
 
     public class Point
     {
-        private int x;
-        private int y;
-
-        public int X
-        {
-            get
-            {
-                return x;
-            }
-            set
-            {
-                x = value;
-            }
-        }
-
-        public int Y
-        {
-            get
-            {
-                return y;
-            }
-            set
-            {
-                y = value;
-            }
-        }
+        public int X { get; set; }
+        public int Y { get; set; }
 
         public Point(int x, int y)
         {
@@ -50,32 +26,8 @@ namespace Exercise01
 
     public class RobotSimulator
     {
-        private Point pos;
-        private int dir;
-
-        public Point Pos
-        {
-            get
-            {
-                return pos;
-            }
-            set
-            {
-                pos = value;
-            }
-        }
-
-        public int Dir
-        {
-            get
-            {
-                return dir;
-            }
-            set
-            {
-                dir = value;
-            }
-        }
+        public Point Pos { get; set; }
+        public int Dir { get; set; }
 
         public RobotSimulator(int x, int y, int dir)
         {
