@@ -4,20 +4,9 @@ namespace Exercise04
 {
     public class MyComplex
     {
-        private double real;
         private double imag;
 
-        public double Real
-        {
-            get
-            {
-                return real;
-            }
-            set
-            {
-                real = value;
-            }
-        }
+        public double Real { get; set; }
 
         public double Imag
         {
@@ -50,7 +39,7 @@ namespace Exercise04
 
         public override string ToString()
         {
-            return real.ToString() + (Imag < 0 ? " " : " +") + imag.ToString() + 'i';
+            return Real.ToString() + (Imag < 0 ? " " : " +") + imag.ToString() + 'i';
         }
 
         public bool IsReal()

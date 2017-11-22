@@ -15,11 +15,11 @@ namespace Exercise07
         {
             get
             {
-                return this.title;
+                return title;
             }
             set
             {
-                this.title = value;
+                title = value;
             }
         }
 
@@ -27,11 +27,11 @@ namespace Exercise07
         {
             get
             {
-                return this.author;
+                return author;
             }
             set
             {
-                this.author = value;
+                author = value;
             }
         }
 
@@ -39,11 +39,11 @@ namespace Exercise07
         {
             get
             {
-                return this.publisher;
+                return publisher;
             }
             set
             {
-                this.publisher = value;
+                publisher = value;
             }
         }
 
@@ -51,11 +51,11 @@ namespace Exercise07
         {
             get
             {
-                return this.releaseDate;
+                return releaseDate;
             }
             set
             {
-                this.releaseDate = value;
+                releaseDate = value;
             }
         }
 
@@ -63,11 +63,11 @@ namespace Exercise07
         {
             get
             {
-                return this.isbn;
+                return isbn;
             }
             set
             {
-                this.isbn = value;
+                isbn = value;
             }
         }
 
@@ -121,17 +121,17 @@ namespace Exercise07
     public class Library
     {
         private string name;
-        private List<Book> bookList;
+        private List<Book> bookList = new List<Book>();
 
         public string Name
         {
             get
             {
-                return this.name;
+                return name;
             }
             set
             {
-                this.name = value;
+                name = value;
             }
         }
 
@@ -143,17 +143,18 @@ namespace Exercise07
             }
             set
             {
-               
+                bookList = value;
             }
         }
 
-        public Library(string name, Book firstBook)
+
+
+        public Library(string name)
         {
             Name = name;
-            bookList.Add(firstBook);
         }
 
-        public Library() : this(null, null)
+        public Library() : this(null)
         {
 
         }
@@ -184,5 +185,7 @@ namespace Exercise07
         {
             bookList.Remove(book);
         }
+
+        
     }
 }

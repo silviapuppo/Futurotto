@@ -61,7 +61,7 @@ namespace Exercise01
             }
             set
             {
-                pos = new Point(value.X, value.Y);
+                pos = value;
             }
         }
 
