@@ -53,6 +53,7 @@
     <Compile Include="TestExercise04.cs" />
     <Compile Include="TestExercise07.cs" />
     <Compile Include="TestExercise06.cs" />
+    <Compile Include="TestExercise10.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -73,6 +74,10 @@
     <ProjectReference Include="..\Exercise07\Exercise07.csproj">
       <Project>{5d361801-64e6-4905-988a-d0165489804c}</Project>
       <Name>Exercise07</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Exercise10\Exercise10.csproj">
+      <Project>{26de6314-0584-49c8-bf14-303f2dfc0991}</Project>
+      <Name>Exercise10</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

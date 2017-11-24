@@ -64,7 +64,6 @@ namespace Exercise07
         public List<Book> BookList { get; set; }  = new List<Book>();
 
 
-
         public Library(string name)
         {
             Name = name;

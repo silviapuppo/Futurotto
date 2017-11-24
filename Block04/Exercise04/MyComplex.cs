@@ -84,13 +84,29 @@ namespace Exercise04
 
         public double Argument()
         {
-            if (Real >= 0)
+            if(Real == 0 && Imag > 0)
+            {
+                return Math.PI / 2;
+            }
+            else if (Real == 0 && Imag < 0)
+            {
+                return -Math.PI / 2;
+            }
+            else if(Real == 0 && Imag == 0)
+            {
+                return double.NaN;
+            }
+            else if (Real > 0)
             {
                 return Math.Atan(Imag / Real);
             }
-            else
+            else if (Real < 0 && Imag >= 0)
             {
                 return Math.Atan(Imag / Real) + Math.PI;
+            }
+            else
+            {
+                return Math.Atan(Imag / Real) - Math.PI;
             }
         }
 
@@ -117,9 +133,13 @@ namespace Exercise04
 
         public MyComplex Divide(MyComplex right)
         {
+            if (right.Real == 0 && right.Imag == 0)
+            {
+                return new MyComplex(double.NaN, double.NaN);
+            }
+
             double tempReal;
             double tempImag;
-            
 
             tempReal = (Real * right.Real - Imag * right.Imag) / (right.Real * right.Real + right.Imag * right.Imag);
             tempImag = (Imag * right.Real + Real * right.Imag) / (right.Real * right.Real + right.Imag * right.Imag);

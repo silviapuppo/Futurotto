@@ -7,7 +7,7 @@ namespace Exercise01
         North, East, South, West
     }
 
-    public class Point
+    public struct Point
     {
         public int X { get; set; }
         public int Y { get; set; }
@@ -18,10 +18,6 @@ namespace Exercise01
             Y = y;
         }
 
-        public Point() : this(0, 0)
-        {
-
-        }
     }
 
     public class RobotSimulator
