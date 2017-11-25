@@ -63,7 +63,4 @@ namespace Exercise09
         }
 
     }
-    public class TimeStructure
-    {
-    }
 }
