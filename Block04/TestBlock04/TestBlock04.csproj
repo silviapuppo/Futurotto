@@ -54,6 +54,7 @@
     <Compile Include="TestExercise07.cs" />
     <Compile Include="TestExercise06.cs" />
     <Compile Include="TestExercise10.cs" />
+    <Compile Include="TestExercise02.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -62,6 +63,10 @@
     <ProjectReference Include="..\Exercise01\Exercise01.csproj">
       <Project>{03dd8d39-0904-4b57-9e81-4159fac84eb0}</Project>
       <Name>Exercise01</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Exercise02\Exercise02.csproj">
+      <Project>{c92436de-cc7a-4b34-83db-d2bee0e9a1c9}</Project>
+      <Name>Exercise02</Name>
     </ProjectReference>
     <ProjectReference Include="..\Exercise04\Exercise04.csproj">
       <Project>{f1498983-7e97-4367-aad3-c839d0395cd5}</Project>

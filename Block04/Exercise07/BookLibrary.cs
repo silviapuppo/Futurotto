@@ -61,7 +61,7 @@ namespace Exercise07
     public class Library
     {
         public string Name { get; set; }
-        public List<Book> BookList { get; set; }  = new List<Book>();
+        public List<Book> BookList { get; set; } = new List<Book>();
 
 
         public Library(string name)
@@ -79,28 +79,48 @@ namespace Exercise07
             BookList.Add(book);
         }
 
-        public Book SearchBook(string author)
+        public Book[] SearchBookByAuthor(string author)
         {
-            try
+            int index = 0;
+
+            foreach (Book b in BookList)
             {
-                return BookList.Find(x => (x.Author == author));
+                if (b.Author == author)
+                {
+                    index++;
+                }
             }
-            catch (ArgumentNullException)
+
+            Book[] found = new Book[index];
+            index = 0;
+
+            foreach (Book b in BookList)
             {
-                return null;
+                if (b.Author == author)
+                {
+                    found[index] = b;
+                    index++;
+                }
             }
+
+            return found;
         }
 
         public string[] DisplayBook(Book book)
         {
-            return BookList.Find(x => x.Equals(book)).DisplayBook();
+            foreach (Book b in BookList)
+            {
+                if (b.Equals(book))
+                {
+                    return b.DisplayBook();
+                }
+            }
+            return null;
         }
 
         public void DeleleBook(Book book)
         {
             BookList.Remove(book);
         }
-
-
     }
 }

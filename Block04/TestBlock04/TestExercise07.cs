@@ -25,6 +25,9 @@ namespace TestBlock04
             string[] infoBook3 = { "Origin", "Dan Brown", "Mondadori", new DateTime(2017, 10, 03).ToString(), "9788804681960" };
 
             CollectionAssert.AreEqual(infoBook1, library.DisplayBook(book1));
+            CollectionAssert.AreEqual(infoBook2, library.DisplayBook(book2));
+            CollectionAssert.AreEqual(infoBook3, library.DisplayBook(book3));
+
         }
 
         [TestMethod]
@@ -42,12 +45,20 @@ namespace TestBlock04
             library.AddBook(book3);
             library.AddBook(book4);
 
+            Book[] kingBook = library.SearchBookByAuthor("Stephen King");
+
+            foreach (Book b in kingBook)
+            {
+                library.DeleleBook(b);
+            }
 
             string[] infoBook1 = { "Quando tutto inizia", "Fabio Volo", "Mondadori", new DateTime(2017, 11, 10).ToString(), "9788804682028" };
             string[] infoBook2 = { "Ogni storia è una storia d'amore", "Alessandro D'Avenia", "Mondadori", new DateTime(2017, 09, 30).ToString(), "9788804681571" };
-            string[] infoBook3 = { "Origin", "Dan Brown", "Mondadori", new DateTime(2017, 10, 03).ToString(), "9788804681960" };
 
+            Assert.AreEqual(2, library.BookList.Count);
             CollectionAssert.AreEqual(infoBook1, library.DisplayBook(book1));
+            CollectionAssert.AreEqual(infoBook2, library.DisplayBook(book2));
+
         }
 
     }
