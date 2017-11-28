@@ -46,6 +46,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="TestExercise01.cs" />
@@ -55,6 +56,9 @@
     <Compile Include="TestExercise06.cs" />
     <Compile Include="TestExercise10.cs" />
     <Compile Include="TestExercise02.cs" />
+    <Compile Include="TestExercise05.cs" />
+    <Compile Include="TestExercise03.cs" />
+    <Compile Include="TestExercise09.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -68,9 +72,17 @@
       <Project>{c92436de-cc7a-4b34-83db-d2bee0e9a1c9}</Project>
       <Name>Exercise02</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Exercise03\Exercise03.csproj">
+      <Project>{3f4c7422-fcf5-4547-9283-52450c4eb960}</Project>
+      <Name>Exercise03</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Exercise04\Exercise04.csproj">
       <Project>{f1498983-7e97-4367-aad3-c839d0395cd5}</Project>
       <Name>Exercise04</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Exercise05\Exercise05.csproj">
+      <Project>{ee5e7898-0e38-48a4-b921-faf589b242d0}</Project>
+      <Name>Exercise05</Name>
     </ProjectReference>
     <ProjectReference Include="..\Exercise06\Exercise06.csproj">
       <Project>{4a34d21d-d770-4c06-b603-d8665828e00e}</Project>
@@ -79,6 +91,10 @@
     <ProjectReference Include="..\Exercise07\Exercise07.csproj">
       <Project>{5d361801-64e6-4905-988a-d0165489804c}</Project>
       <Name>Exercise07</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Exercise09\Exercise09.csproj">
+      <Project>{297360b8-2885-462c-9918-fc2e67c76fbc}</Project>
+      <Name>Exercise09</Name>
     </ProjectReference>
     <ProjectReference Include="..\Exercise10\Exercise10.csproj">
       <Project>{26de6314-0584-49c8-bf14-303f2dfc0991}</Project>

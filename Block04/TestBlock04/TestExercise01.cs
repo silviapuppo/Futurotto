@@ -16,19 +16,19 @@ namespace TestBlock04
 
             Assert.AreEqual(1, tester.Pos.X);
             Assert.AreEqual(5, tester.Pos.Y);
-            Assert.AreEqual((int)Directions.East, tester.Dir);
+            Assert.AreEqual(Directions.East, tester.Dir);
         }
 
         [TestMethod]
         public void TestMoveRobotDiffOrigin()
         {
-            RobotSimulator tester = new RobotSimulator(2,-1, (int)Directions.East);
+            RobotSimulator tester = new RobotSimulator(2,-1, Directions.East);
 
             tester.MoveRobot("rRaArAl");
 
             Assert.AreEqual(0, tester.Pos.X);
             Assert.AreEqual(0, tester.Pos.Y);
-            Assert.AreEqual((int)Directions.West, tester.Dir);
+            Assert.AreEqual(Directions.West, tester.Dir);
         }
 
         [TestMethod]
@@ -40,19 +40,31 @@ namespace TestBlock04
 
             Assert.AreEqual(0, tester.Pos.X);
             Assert.AreEqual(0, tester.Pos.Y);
-            Assert.AreEqual((int)Directions.North, tester.Dir);
+            Assert.AreEqual(Directions.North, tester.Dir);
         }
 
         [TestMethod]
         public void TestMoveRobotExample()
         {
-            RobotSimulator tester = new RobotSimulator(7,3, (int)Directions.North);
+            RobotSimulator tester = new RobotSimulator(7,3, Directions.North);
 
             tester.MoveRobot("RAALAL");
 
             Assert.AreEqual(9, tester.Pos.X);
             Assert.AreEqual(4, tester.Pos.Y);
-            Assert.AreEqual((int)Directions.West, tester.Dir);
+            Assert.AreEqual(Directions.West, tester.Dir);
+        }
+
+        [TestMethod]
+        public void TestMoveRobotNegative()
+        {
+            RobotSimulator tester = new RobotSimulator(0, 0, (int)Directions.North);
+
+            tester.MoveRobot("LALA");
+
+            Assert.AreEqual(-1, tester.Pos.X);
+            Assert.AreEqual(-1, tester.Pos.Y);
+            Assert.AreEqual(Directions.South, tester.Dir);
         }
 
 

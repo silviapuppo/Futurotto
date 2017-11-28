@@ -16,14 +16,14 @@ namespace Exercise02
 
     }
 
-    public class SimpleList<T>
+    public class SimpleList<T> where T : IEquatable<T>
     {
         public ListNode<T> Start { get; set; }
-        public int Count { get; set; }
+        public int Count { get; private set; }
 
-        public SimpleList(ListNode<T> start)
+        public SimpleList()
         {
-            Start = start;
+            Start = null;
             Count = 0;
         }
 
@@ -54,19 +54,22 @@ namespace Exercise02
             ListNode<T> temp = Start;
             ListNode<T> prev = null;
 
-            for (int i = 1; i <= index; i++)
+            if (index == 0)
             {
-                prev = temp;
-                temp = temp.Next;
+                Start = Start.Next;
+            }
+            else
+            {
+                for (int i = 1; i <= index; i++)
+                {
+                    prev = temp;
+                    temp = temp.Next;
+                }
+
+                prev.Next = temp.Next;
             }
 
-
-            if (temp.Next != null)
-            {
-                prev = temp.Next;
-                Count--;
-            }
-
+            Count--;
         }
 
         public T[] ListToArray()
@@ -82,6 +85,24 @@ namespace Exercise02
             return result;
         }
 
+        public static SimpleList<T> ArrayToList(T[] array)
+        {
+            SimpleList<T> result = new SimpleList<T>();
 
+            foreach(T value in array)
+            {
+                result.ListAdd(value);
+            }
+
+            return result;
+        }
+
+        public void ListReverse()
+        {
+            T[] array = ListToArray();
+            Array.Reverse(array);
+            Start = ArrayToList(array).Start;
+            
+        }
     }
 }

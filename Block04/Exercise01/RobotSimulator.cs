@@ -23,15 +23,15 @@ namespace Exercise01
     public class RobotSimulator
     {
         public Point Pos { get; set; }
-        public int Dir { get; set; }
+        public Directions Dir { get; set; }
 
-        public RobotSimulator(int x, int y, int dir)
+        public RobotSimulator(int x, int y, Directions dir)
         {
             Pos = new Point(x, y);
             Dir = dir;
         }
 
-        public RobotSimulator() : this(0, 0, 0)
+        public RobotSimulator() : this(0, 0, Directions.North)
         {
 
         }
@@ -45,9 +45,9 @@ namespace Exercise01
                 switch (c)
                 {
                     case 'R':
-                        if (Dir == (int)Directions.West)
+                        if (Dir == Directions.West)
                         {
-                            Dir = (int)Directions.North;
+                            Dir = Directions.North;
                         }
                         else
                         {
@@ -55,9 +55,9 @@ namespace Exercise01
                         }
                         break;
                     case 'L':
-                        if (Dir == (int)Directions.North)
+                        if (Dir == Directions.North)
                         {
-                            Dir = (int)Directions.West;
+                            Dir = Directions.West;
                         }
                         else
                         {
@@ -71,20 +71,20 @@ namespace Exercise01
             }
         }
 
-        private Point AdvanceRobot(int dir, Point position)
+        private Point AdvanceRobot(Directions dir, Point position)
         {
             switch (dir)
             {
-                case (int)Directions.North:
+                case Directions.North:
                     position.Y++;
                     break;
-                case (int)Directions.East:
+                case Directions.East:
                     position.X++;
                     break;
-                case (int)Directions.South:
+                case Directions.South:
                     position.Y--;
                     break;
-                case (int)Directions.West:
+                case Directions.West:
                     position.X--;
                     break;
             }

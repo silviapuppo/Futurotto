@@ -59,7 +59,7 @@ namespace Exercise09
 
         public static explicit operator int(Time a)
         {
-            return a.Hour * 60 + a.Hour + a.Minute;
+            return a.Hour * 60 + a.Minute;
         }
 
     }
