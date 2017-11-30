@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Exercise05;
 using System.Numerics;
+
 namespace TestBlock04
 {
     [TestClass]
@@ -32,8 +33,6 @@ namespace TestBlock04
 
             Alice.GeneratePublicKey(rnd);
             Bob.GeneratePublicKey(rnd);
-
-
 
             Alice.GetSecretKey(Bob);
             Bob.GetSecretKey(Alice);
