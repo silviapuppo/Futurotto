@@ -49,6 +49,38 @@ namespace Exercise02
             Count++;
         }
 
+        public void ListRemove(T value)
+        {
+            ListNode<T> temp = Start;
+            ListNode<T> prev = null;
+
+            if (Start.Value.Equals(value))
+            {
+                Start = Start.Next;
+                Count--;
+            }
+            else
+            {
+                Start = Start.Next;
+                while (Start.Next != null && !(Start.Value.Equals(value)))
+                {
+                    prev = Start;
+                    Start = temp.Next;
+                }
+
+                if (Start.Next != null)
+                {
+                    prev.Next = Start.Next;
+                    Start = temp;
+                    Count--;
+                }
+                else
+                {
+                    throw new ArgumentNullException("value", "Element not found");
+                }
+            }
+        }
+
         public void ListRemoveAt(int index)
         {
             ListNode<T> temp = Start;
@@ -89,7 +121,7 @@ namespace Exercise02
         {
             SimpleList<T> result = new SimpleList<T>();
 
-            foreach(T value in array)
+            foreach (T value in array)
             {
                 result.ListAdd(value);
             }
@@ -102,7 +134,8 @@ namespace Exercise02
             T[] array = ListToArray();
             Array.Reverse(array);
             Start = ArrayToList(array).Start;
-            
+
         }
+
     }
 }

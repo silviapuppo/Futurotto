@@ -10,7 +10,7 @@ namespace TestBlock04
         [TestMethod]
         public void TestBankAccount()
         {
-            BankAccount account = new BankAccount(1000, DateTime.Now, "Genova 2", 0.05, 0.01, new Utility(0, 10), 2.10, AccountType.Current);
+            BankAccount account = new BankAccount(1000, DateTime.Now, "Genova 2", 0.05, 0.01, 2.10, AccountType.Current);
             Costumer ibb = new Costumer("Ibb", 1234);
 
             account.Owners.Add(ibb);
@@ -21,7 +21,7 @@ namespace TestBlock04
         [TestMethod]
         public void TestBankAccountDeposit()
         {
-            BankAccount account = new BankAccount(1000, DateTime.Now, "Genova 2", 0.05, 0.01, new Utility(0, 10), 2.10, AccountType.Current);
+            BankAccount account = new BankAccount(1000, DateTime.Now, "Genova 2", 0.05, 0.01, 2.10, AccountType.Current);
             Costumer ibb = new Costumer("Ibb", 1234);
 
             account.Owners.Add(ibb);
@@ -33,7 +33,7 @@ namespace TestBlock04
         [TestMethod]
         public void TestBankAccountWithDraw()
         {
-            BankAccount account = new BankAccount(1000, DateTime.Now, "Genova 2", 0.05, 0.01, new Utility(0, 10), 2.10, AccountType.Current);
+            BankAccount account = new BankAccount(1000, DateTime.Now, "Genova 2", 0.05, 0.01, 2.10, AccountType.Current);
             Costumer ibb = new Costumer("Ibb", 1234);
 
             account.Owners.Add(ibb);
@@ -45,8 +45,8 @@ namespace TestBlock04
         [TestMethod]
         public void TestBankAccountTransfer()
         {
-            BankAccount account1 = new BankAccount(4000, DateTime.Now, "Genova 2", 0.05, 0.01, new Utility(0, 10), 2.10, AccountType.Current);
-            BankAccount account2 = new BankAccount(2000, DateTime.Now, "Genova 2", 0.05, 0.01, new Utility(0, 10), 2.10, AccountType.Current);
+            BankAccount account1 = new BankAccount(4000, DateTime.Now, "Genova 2", 0.05, 0.01, 2.10, AccountType.Current);
+            BankAccount account2 = new BankAccount(2000, DateTime.Now, "Genova 2", 0.05, 0.01, 2.10, AccountType.Current);
             Costumer ibb = new Costumer("Ibb", 1234);
             Costumer obb = new Costumer("Obb", 4321);
 

@@ -36,7 +36,7 @@ namespace TestBlock04
         }
 
         [TestMethod]
-        public void TestListRemoveFisrt()
+        public void TestListRemoveAtFisrt()
         { 
             SimpleList<int> chars = new SimpleList<int>();
 
@@ -48,6 +48,36 @@ namespace TestBlock04
             Assert.AreEqual(2, chars.Count);
             Assert.AreEqual(2, chars.Start.Value);
             Assert.AreEqual(3, chars.Start.Next.Value);
+        }
+
+        [TestMethod]
+        public void TestListRemoveFirst()
+        {
+            SimpleList<int> numbers = new SimpleList<int>();
+
+            numbers.ListAdd(1);
+            numbers.ListAdd(2);
+            numbers.ListAdd(3);
+            numbers.ListRemove(1);
+
+            Assert.AreEqual(2, numbers.Count);
+            Assert.AreEqual(2, numbers.Start.Value);
+            Assert.AreEqual(3, numbers.Start.Next.Value);
+        }
+
+        [TestMethod]
+        public void TestListRemove()
+        {
+            SimpleList<int> numbers = new SimpleList<int>();
+
+            numbers.ListAdd(1);
+            numbers.ListAdd(2);
+            numbers.ListAdd(3);
+            numbers.ListRemove(2);
+
+            Assert.AreEqual(2, numbers.Count);
+            Assert.AreEqual(1, numbers.Start.Value);
+            Assert.AreEqual(3, numbers.Start.Next.Value);
         }
 
 
@@ -92,6 +122,7 @@ namespace TestBlock04
             Assert.AreEqual(2, numbers.Start.Next.Value);
             Assert.AreEqual(1, numbers.Start.Next.Next.Value);
         }
+
 
 
 
