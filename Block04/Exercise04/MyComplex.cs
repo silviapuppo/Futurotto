@@ -15,7 +15,6 @@ namespace Exercise04
 
         public MyComplex() : this(0, 0)
         {
-
         }
 
         public void SetValue(double real, double imag)
@@ -84,7 +83,7 @@ namespace Exercise04
 
         public double Argument()
         {
-            if(Real == 0 && Imag > 0)
+            if (Real == 0 && Imag > 0)
             {
                 return Math.PI / 2;
             }
@@ -92,7 +91,7 @@ namespace Exercise04
             {
                 return -Math.PI / 2;
             }
-            else if(Real == 0 && Imag == 0)
+            else if (Real == 0 && Imag == 0)
             {
                 return double.NaN;
             }
@@ -112,12 +111,16 @@ namespace Exercise04
 
         public MyComplex Add(MyComplex right)
         {
-            return new MyComplex(Real + right.Real, Imag + right.Imag);
+            Real = Real + right.Real;
+            Imag = Imag + right.Imag;
+            return new MyComplex(Real, Imag);
         }
 
         public MyComplex Sub(MyComplex right)
         {
-            return new MyComplex(Real - right.Real, Imag - right.Imag);
+            Real = Real - right.Real;
+            Imag = Imag - right.Imag;
+            return new MyComplex(Real, Imag);
         }
 
         public MyComplex Multiply(MyComplex right)
@@ -138,11 +141,8 @@ namespace Exercise04
                 return new MyComplex(double.NaN, double.NaN);
             }
 
-            double tempReal;
-            double tempImag;
-
-            tempReal = (Real * right.Real - Imag * right.Imag) / (right.Real * right.Real + right.Imag * right.Imag);
-            tempImag = (Imag * right.Real + Real * right.Imag) / (right.Real * right.Real + right.Imag * right.Imag);
+            double tempReal = (Real * right.Real - Imag * right.Imag) / (right.Real * right.Real + right.Imag * right.Imag);
+            double tempImag = (Imag * right.Real + Real * right.Imag) / (right.Real * right.Real + right.Imag * right.Imag);
 
             Real = tempReal;
             Imag = tempImag;

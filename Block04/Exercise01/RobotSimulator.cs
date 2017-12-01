@@ -25,15 +25,14 @@ namespace Exercise01
         public Point Pos { get; set; }
         public Directions Dir { get; set; }
 
-        public RobotSimulator(int x, int y, Directions dir)
+        public RobotSimulator(Point pos, Directions dir)
         {
-            Pos = new Point(x, y);
+            Pos = pos;
             Dir = dir;
         }
 
-        public RobotSimulator() : this(0, 0, Directions.North)
+        public RobotSimulator() : this(new Point(0,0), Directions.North)
         {
-
         }
 
         public void MoveRobot(string moves)

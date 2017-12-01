@@ -22,7 +22,7 @@ namespace TestBlock04
         [TestMethod]
         public void TestMoveRobotDiffOrigin()
         {
-            RobotSimulator tester = new RobotSimulator(2,-1, Directions.East);
+            RobotSimulator tester = new RobotSimulator(new Point(2,-1), Directions.East);
 
             tester.MoveRobot("rRaArAl");
 
@@ -46,7 +46,7 @@ namespace TestBlock04
         [TestMethod]
         public void TestMoveRobotExample()
         {
-            RobotSimulator tester = new RobotSimulator(7,3, Directions.North);
+            RobotSimulator tester = new RobotSimulator(new Point(7,3), Directions.North);
 
             tester.MoveRobot("RAALAL");
 
@@ -58,7 +58,7 @@ namespace TestBlock04
         [TestMethod]
         public void TestMoveRobotNegative()
         {
-            RobotSimulator tester = new RobotSimulator(0, 0, (int)Directions.North);
+            RobotSimulator tester = new RobotSimulator();
 
             tester.MoveRobot("LALA");
 

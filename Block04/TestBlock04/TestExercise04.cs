@@ -67,7 +67,7 @@ namespace TestBlock04
             MyComplex third = new MyComplex(3, 3);
             
             Assert.AreEqual("5 +5i", first.Add(second).ToString());
-            Assert.AreEqual("1 +1i", first.Sub(second).ToString());
+            Assert.AreEqual("3 +3i", first.Sub(second).ToString());
             Assert.AreEqual("0 +12i", first.Multiply(second).ToString());
             Assert.AreEqual("0 +1,5i", third.Divide(second).ToString());
             Assert.AreEqual("NaN +NaNi", second.Divide(zero).ToString());

@@ -93,7 +93,7 @@ namespace Exercise06
 
         public MyPolynomial Multiply(MyPolynomial another)
         {
-            double[] coeffsResult = new double[GetDegree() + 1 + another.GetDegree() + 1];
+            double[] coeffsResult = new double[GetDegree() + another.GetDegree() + 1];
 
             for (int i = 0; i < GetDegree() + 1; i++)
             {

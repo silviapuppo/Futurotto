@@ -41,7 +41,7 @@ namespace Exercise03
 
     public class BankAccount
     {
-        private double currentBalance;
+        public double CurrentBalance { get; set; }
         public DateTime OpeningDate { get; private set; }
         public string Branch { get; set; }
         public double PayableInterests { get; set; }
@@ -52,31 +52,11 @@ namespace Exercise03
         public AccountType Type { get; set; }
         private List<Operation> record = new List<Operation>();
 
-        public double CurrentBalance
-        {
-            get
-            {
-                
-                return currentBalance;
-            }
-            set
-            {
-                currentBalance = value;
-            }
-        }
-
-
         public List<Operation> Record
         {
             get
             {
-                foreach (Operation o in record)
-                {
-                    if ((DateTime.Now - o.Date).Days >= 30)
-                    {
-                        record.Remove(o);
-                    }
-                }
+                record.RemoveAll(o => (DateTime.Now - o.Date).Days >= 30);
                 return record;
             }
             private set
@@ -96,6 +76,10 @@ namespace Exercise03
             Type = type;
         }
 
+        public void AddCostumer(Costumer costumer)
+        {
+            Owners.Add(costumer);
+        }
 
     }
 
@@ -110,31 +94,31 @@ namespace Exercise03
             Id = id;
         }
 
-        public void Deposit(double amount, BankAccount account)
+        public void Deposit(double amount, BankAccount account, DateTime date) //argument date added for testing purpose
         {
             account.CurrentBalance += amount;
-            account.Record.Add(new Operation(OperationType.Deposit, "Deposit of €" + amount, DateTime.Now));
+            account.Record.Add(new Operation(OperationType.Deposit, "Deposit of €" + amount,date));
         }
 
-        public void Withdraw(double amount, BankAccount account)
+        public void Withdraw(double amount, BankAccount account, DateTime date) //argument date added for testing purpose
         {
             if (account.Type == AccountType.Current)
             {
                 account.CurrentBalance -= amount;
-                account.Record.Add(new Operation(OperationType.Withdraw, "Withdraw of €" + amount, DateTime.Now));
+                account.Record.Add(new Operation(OperationType.Withdraw, "Withdraw of €" + amount, date));
             }
             else
             {
-                account.Record.Add(new Operation(OperationType.FailedOp, "Attempted withdraw of €" + amount, DateTime.Now));
+                account.Record.Add(new Operation(OperationType.FailedOp, "Attempted withdraw of €" + amount, date));
             }
         }
 
-        public void Transfer(double amount, BankAccount from, BankAccount to)
+        public void Transfer(double amount, BankAccount from, BankAccount to, DateTime date) // argument date added for testing purpose
         {
             from.CurrentBalance -= amount;
             to.CurrentBalance += amount;
-            from.Record.Add(new Operation(OperationType.Transfer, "Transfer to others €" + amount, DateTime.Now));
-            to.Record.Add(new Operation(OperationType.Transfer, "received from others €" + amount, DateTime.Now));
+            from.Record.Add(new Operation(OperationType.Transfer, "Transfer to others €" + amount, date));
+            to.Record.Add(new Operation(OperationType.Transfer, "Received from others €" + amount, date));
         }
     }
 

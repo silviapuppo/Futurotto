@@ -22,7 +22,6 @@ namespace Exercise07
 
         public Book() : this(null, null, null, DateTime.Now, 0)
         {
-
         }
 
         public string[] DisplayBook()
@@ -36,7 +35,6 @@ namespace Exercise07
             informations[4] = Isbn.ToString();
 
             return informations;
-
         }
 
         public bool Equals(Book book)
@@ -54,15 +52,12 @@ namespace Exercise07
 
             return false;
         }
-
-
     }
 
     public class Library
     {
         public string Name { get; set; }
         public List<Book> BookList { get; set; } = new List<Book>();
-
 
         public Library(string name)
         {

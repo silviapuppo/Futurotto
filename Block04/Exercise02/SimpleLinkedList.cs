@@ -16,7 +16,7 @@ namespace Exercise02
 
     }
 
-    public class SimpleList<T> where T : IEquatable<T>
+    public class SimpleList<T>
     {
         public ListNode<T> Start { get; set; }
         public int Count { get; private set; }
@@ -47,38 +47,6 @@ namespace Exercise02
                 Start = temp;
             }
             Count++;
-        }
-
-        public void ListRemove(T value)
-        {
-            ListNode<T> temp = Start;
-            ListNode<T> prev = null;
-
-            if (Start.Value.Equals(value))
-            {
-                Start = Start.Next;
-                Count--;
-            }
-            else
-            {
-                Start = Start.Next;
-                while (Start.Next != null && !(Start.Value.Equals(value)))
-                {
-                    prev = Start;
-                    Start = temp.Next;
-                }
-
-                if (Start.Next != null)
-                {
-                    prev.Next = Start.Next;
-                    Start = temp;
-                    Count--;
-                }
-                else
-                {
-                    throw new ArgumentNullException("value", "Element not found");
-                }
-            }
         }
 
         public void ListRemoveAt(int index)
